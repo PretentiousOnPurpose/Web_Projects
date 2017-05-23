@@ -16,7 +16,7 @@ var cell7 = document.querySelector('#c7');
 var cell8 = document.querySelector('#c8');
 var cell9 = document.querySelector('#c9');
 var resultp = document.querySelector('#result');
-var resetarr =   [cell1 , cell2 , cell3 , cell4 , cell5 , cell6 , cell7 , cell8 , cell9];
+var resetarr = [cell1 , cell2 , cell3 , cell4 , cell5 , cell6 , cell7 , cell8 , cell9];
 function entry(div) {
         if (done === 0) {
             check();
@@ -115,6 +115,18 @@ function check() {
             done++;
             return;
         } else if (cell2.innerHTML === "X") {
+            resultp.innerHTML = player2.innerHTML + "Wins !";
+            s2.innerHTML = "Score: " + ++score2;
+            done++;
+            return;
+        }
+    }  else if (cell7.innerHTML === cell5.innerHTML && cell7.innerHTML === cell3.innerHTML) {
+        if (cell7.innerHTML === "O") {
+            resultp.innerHTML = player1.innerHTML + "Wins !";
+            s1.innerHTML = "Score: " + ++score1;
+            done++;
+            return;
+        } else if (cell7.innerHTML === "X") {
             resultp.innerHTML = player2.innerHTML + "Wins !";
             s2.innerHTML = "Score: " + ++score2;
             done++;
