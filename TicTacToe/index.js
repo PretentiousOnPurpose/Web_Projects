@@ -17,15 +17,22 @@ var cell8 = document.querySelector('#c8');
 var cell9 = document.querySelector('#c9');
 var resultp = document.querySelector('#result');
 var resetarr = [cell1 , cell2 , cell3 , cell4 , cell5 , cell6 , cell7 , cell8 , cell9];
+
+player1.style.borderBottomColor = "#00539f";
+
 function entry(div) {
         if (done === 0) {
             check();
             if (chance % 2 === 0) {
+                player2.style.borderBottomColor = "#00539f";
+                player1.style.borderBottomColor = "transparent";
                 if (div.innerHTML !== "O" || div.innerHTML !== "X") {
                     div.innerHTML = "O";
                     chance++;
                 }
             } else {
+                player1.style.borderBottomColor = "#00539f";
+                player2.style.borderBottomColor = "transparent";
                 if (div.innerHTML !== "O" || div.innerHTML !== "X") {
                     div.innerHTML = "X";
                     chance++;
@@ -144,6 +151,8 @@ function check() {
         resultp.innerHTML = "";
         chance = 0;
         done = 0;
+        player1.style.borderBottomColor = "#00539f";
+        player2.style.borderBottomColor = "transparent";
         return;
     }
 
