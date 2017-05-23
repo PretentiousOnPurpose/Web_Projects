@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Cantarell" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+    <title>Tic Tac Toe - Chawat Apps</title>
+</head>
+<!--SVG Declaration-->
+    <svg
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+        style="display:none">
+        <symbol viewBox="0 0 100 100" id="bar">
+            <path d="M93,18.9v7.2c0,1-0.4,1.8-1.1,2.5c-0.7,0.7-1.6,1.1-2.5,1.1H10.6c-1,0-1.8-0.4-2.5-1.1C7.3,27.9,7,27,7,26.1v-7.2
+		c0-1,0.4-1.8,1.1-2.5c0.7-0.7,1.5-1.1,2.5-1.1h78.9c1,0,1.8,0.4,2.5,1.1C92.7,17.1,93,17.9,93,18.9z M93,47.6v7.2
+		c0,1-0.4,1.8-1.1,2.5c-0.7,0.7-1.6,1.1-2.5,1.1H10.6c-1,0-1.8-0.4-2.5-1.1C7.3,56.5,7,55.7,7,54.7v-7.2c0-1,0.4-1.8,1.1-2.5
+		c0.7-0.7,1.5-1.1,2.5-1.1h78.9c1,0,1.8,0.4,2.5,1.1C92.7,45.8,93,46.6,93,47.6z M93,76.2v7.2c0,1-0.4,1.8-1.1,2.5
+		c-0.7,0.7-1.6,1.1-2.5,1.1H10.6c-1,0-1.8-0.4-2.5-1.1C7.3,85.2,7,84.4,7,83.4v-7.2c0-1,0.4-1.8,1.1-2.5c0.7-0.7,1.5-1.1,2.5-1.1
+		h78.9c1,0,1.8,0.4,2.5,1.1C92.7,74.4,93,75.3,93,76.2z"/>
+        </symbol>
+    </svg>
+<!--SVG Declaration-->
+<body>
+    <header>
+        <svg class="bar">
+            <use xlink:href="#bar"></use>
+        </svg>
+        <img src="icon.png" alt="Chawat_Logo" id="logo">
+        <p id="gname">Tic Tac Toe</p>
+    </header>
+    <main>
+        <div id="play1">
+            <p contenteditable="true" id="player1">Player 1</p>
+            <p id="scorep1">Score: 0</p>
+            <p id="sym1">Symbol: O</p>
+        </div>
+        <section>
+            <div id="tic">
+                <div>
+                    <div class="cell1"><p onclick="entry(this)" id="c1"></p></div>
+                    <div class="cell2"><p onclick="entry(this)" id="c2"></p></div>
+                    <div class="cell3"><p onclick="entry(this)" id="c3"></p></div>
+                </div>
+                <div>
+                    <div class="cell4"><p onclick="entry(this)" id="c4"></p></div>
+                    <div class="cell5"><p onclick="entry(this)" id="c5"></p></div>
+                    <div class="cell6"><p onclick="entry(this)" id="c6"></p></div>
+                </div>
+                <div>
+                    <div class="cell7"><p onclick="entry(this)" id="c7"></p></div>
+                    <div class="cell8"><p onclick="entry(this)" id="c8"></p></div>
+                    <div class="cell9"><p onclick="entry(this)" id="c9"></p></div>
+                </div>
+            </div>
+            <p id="result"></p>
+            <button id="reset" onclick="reset()">Reset</button>
+        </section>
+
+        <div id="play2">
+            <p id="player2" contenteditable="true">Player 2</p>
+            <p id="scorep2">Score: 0</p>
+            <p id="sym2">Symbol: X</p>
+        </div>
+    </main>
+    <script src="index.js"></script>
+</body>
+</html>
