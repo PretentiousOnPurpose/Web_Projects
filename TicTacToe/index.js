@@ -1,4 +1,5 @@
 var chance = 0;
+var done = 0;
 var player1 = document.querySelector('#player1');
 var player2 = document.querySelector('#player2');
 var s1 = document.querySelector('#scorep1');
@@ -15,19 +16,23 @@ var cell7 = document.querySelector('#c7');
 var cell8 = document.querySelector('#c8');
 var cell9 = document.querySelector('#c9');
 var resultp = document.querySelector('#result');
-var resetarr = [cell1 , cell2 , cell3 , cell4 , cell5 , cell6 , cell7 , cell8 , cell9];
+var resetarr =   [cell1 , cell2 , cell3 , cell4 , cell5 , cell6 , cell7 , cell8 , cell9];
 function entry(div) {
-        check();
-        if (chance % 2 === 0) {
-            if (div.innerHTML !== "O" || div.innerHTML !== "X") {
-                div.innerHTML = "O";
-                chance++;
+        if (done === 0) {
+            check();
+            if (chance % 2 === 0) {
+                if (div.innerHTML !== "O" || div.innerHTML !== "X") {
+                    div.innerHTML = "O";
+                    chance++;
+                }
+            } else {
+                if (div.innerHTML !== "O" || div.innerHTML !== "X") {
+                    div.innerHTML = "X";
+                    chance++;
+                }
             }
         } else {
-            if (div.innerHTML !== "O" || div.innerHTML !== "X") {
-                div.innerHTML = "X";
-                chance++;
-            }
+            return;
         }
         check();
 }
@@ -46,61 +51,73 @@ function check() {
     } else if (cell1.innerHTML === cell4.innerHTML && cell1.innerHTML === cell7.innerHTML) {
         if (cell1.innerHTML === "O") {
             resultp.innerHTML = player1.innerHTML + "Wins !";
+            done++;
             s1.innerHTML = "Score: " + ++score1;
             return;
         } else if (cell1.innerHTML === "X") {
             resultp.innerHTML = player2.innerHTML + "Wins !";
             s2.innerHTML = "Score: " + ++score2;
+            done++;
             return;
         }
     } else if (cell1.innerHTML === cell5.innerHTML && cell1.innerHTML === cell9.innerHTML) {
         if (cell1.innerHTML === "O") {
             resultp.innerHTML = player1.innerHTML + "Wins !";
             s1.innerHTML = "Score: " + ++score1;
+            done++;
             return;
         } else if (cell1.innerHTML === "X") {
             resultp.innerHTML = player2.innerHTML + "Wins !";
             s2.innerHTML = "Score: " + ++score2;
+            done++;
             return;
         }
     } else if (cell7.innerHTML === cell8.innerHTML && cell7.innerHTML === cell9.innerHTML) {
         if (cell7.innerHTML === "O") {
             resultp.innerHTML = player1.innerHTML + "Wins !";
             s1.innerHTML = "Score: " + ++score1;
+            done++;
             return;
         } else if (cell7.innerHTML === "X") {
             resultp.innerHTML = player2.innerHTML + "Wins !";
             s2.innerHTML = "Score: " + ++score2;
+            done++;
             return;
         }
     } else if (cell3.innerHTML === cell6.innerHTML && cell3.innerHTML === cell9.innerHTML) {
         if (cell3.innerHTML === "O") {
             resultp.innerHTML = player1.innerHTML + "Wins !";
             s1.innerHTML = "Score: " + ++score1;
+            done++;
             return;
         } else if (cell3.innerHTML === "X") {
             resultp.innerHTML = player2.innerHTML + "Wins !";
             s2.innerHTML = "Score: " + ++score2;
+            done++;
             return;
         }
     } else if (cell4.innerHTML === cell5.innerHTML && cell4.innerHTML === cell6.innerHTML) {
         if (cell4.innerHTML === "O") {
             resultp.innerHTML = player1.innerHTML + "Wins !";
             s1.innerHTML = "Score: " + ++score1;
+            done++;
             return;
         } else if (cell4.innerHTML === "X") {
             resultp.innerHTML = player2.innerHTML + "Wins !";
             s2.innerHTML = "Score: " + ++score2;
+            done++;
             return;
         }
     } else if (cell2.innerHTML === cell5.innerHTML && cell2.innerHTML === cell8.innerHTML) {
         if (cell2.innerHTML === "O") {
             resultp.innerHTML = player1.innerHTML + "Wins !";
             s1.innerHTML = "Score: " + ++score1;
+            done++;
             return;
         } else if (cell2.innerHTML === "X") {
             resultp.innerHTML = player2.innerHTML + "Wins !";
             s2.innerHTML = "Score: " + ++score2;
+            done++;
             return;
         }
     }
@@ -114,6 +131,7 @@ function check() {
         }
         resultp.innerHTML = "";
         chance = 0;
+        done = 0;
         return;
     }
 
