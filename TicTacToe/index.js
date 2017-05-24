@@ -1,3 +1,5 @@
+var name1 = player1.innerHTML;
+var name2 = player2.inneeHTML;
 var chance = 0;
 var done = 0;
 var player1 = document.querySelector('#player1');
@@ -18,21 +20,20 @@ var cell9 = document.querySelector('#c9');
 var resultp = document.querySelector('#result');
 var resetarr = [cell1 , cell2 , cell3 , cell4 , cell5 , cell6 , cell7 , cell8 , cell9];
 
-player1.style.borderBottomColor = "#00539f";
-
+player1.innerHTML = name1 + " *";
 function entry(div) {
         if (done === 0) {
             check();
             if (chance % 2 === 0) {
-                player2.style.borderBottomColor = "#00539f";
-                player1.style.borderBottomColor = "transparent";
+                player2.innerHTML = name2 + " *";
+                player1.innerHTML = name1;
                 if (div.innerHTML !== "O" || div.innerHTML !== "X") {
                     div.innerHTML = "O";
                     chance++;
                 }
             } else {
-                player1.style.borderBottomColor = "#00539f";
-                player2.style.borderBottomColor = "transparent";
+                player1.innerHTML = name1 + " *";
+                player2.innerHTML = name2;
                 if (div.innerHTML !== "O" || div.innerHTML !== "X") {
                     div.innerHTML = "X";
                     chance++;
