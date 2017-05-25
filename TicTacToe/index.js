@@ -1,3 +1,5 @@
+var name1 = player1.innerHTML;
+var name2 = player2.inneeHTML;
 var chance = 0;
 var done = 0;
 var player1 = document.querySelector('#player1');
@@ -21,6 +23,7 @@ var resultp = document.querySelector('#result');
 var resetarr = [cell1 , cell2 , cell3 , cell4 , cell5 , cell6 , cell7 , cell8 , cell9];
 
 player1.innerHTML = name1 + " *";
+<<<<<<< HEAD
 
 function entry(div) {
     if (done === 0) {
@@ -38,6 +41,25 @@ function entry(div) {
             if (((div.innerHTML !== "O" || div.innerHTML !== "X") && div.innerHTML === "") && done === 0) {
                 div.innerHTML = "X";
                 chance++;
+=======
+function entry(div) {
+        if (done === 0) {
+            check();
+            if (chance % 2 === 0) {
+                player2.innerHTML = name2 + " *";
+                player1.innerHTML = name1;
+                if (div.innerHTML !== "O" || div.innerHTML !== "X") {
+                    div.innerHTML = "O";
+                    chance++;
+                }
+            } else {
+                player1.innerHTML = name1 + " *";
+                player2.innerHTML = name2;
+                if (div.innerHTML !== "O" || div.innerHTML !== "X") {
+                    div.innerHTML = "X";
+                    chance++;
+                }
+>>>>>>> 8146ef1c9a5acfe9d41768cb88bfdc8af7676b09
             }
         }
         check();
