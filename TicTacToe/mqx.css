@@ -9,7 +9,7 @@ main , section ,  body , html , header , p , img {
     text-align: center;
     font-family: 'Arvo', sans-serif;
     color: #49708f;
-    border-bottom: 2px transparent;
+    border-bottom:2px transparent;
 }
 
 #scorep1 , #scorep2{
