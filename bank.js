@@ -6,6 +6,12 @@ class bankAccount {
     this.age = age;
   }
  
+  inFixDep(amt , date)  { // date-format : '25 Mar 2017'
+    let fixDate = new Date(date);
+    this.amt -= amt;
+    setInterval((amt) => {amt += 0.05*amt;})
+  }
+  
   currbal() {
     console.log(`Current balance: $ ${this.amt}`);
   }
@@ -17,7 +23,7 @@ class bankAccount {
     console.log(`Current balance: $ ${this.amt}`);
     console.log("---------//Deposition-----------");
     console.log("------------------------------");
-  }
+    }
   
   withAmt(amt) {
     this.amt -= amt;
@@ -27,11 +33,10 @@ class bankAccount {
     console.log("---------//Withdrawal-----------");
     console.log("------------------------------");
     }
-  
-    
 }
 
 let yash = new bankAccount("Yash" , 12000 , "8971220965" , 19);
 yash.currbal();
 yash.depAmt(1240);
-yash.withAmt(12000);
+let a = new Date('25 Jan 2017');
+console.log(a.getFullYear() , a.getDate());
