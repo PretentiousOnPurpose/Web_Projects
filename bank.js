@@ -9,19 +9,24 @@ class bankAccount {
     this.dateFD = null;
     this.FD = null;
   }
-  
+
   createFD(amt , date) {
     this.amt -= amt;
-    dateFD = new Date(data)
-    FD = new fixedDeposit(amt , dateFD.getDate() , dateFD.getMonth() , dateFD.getFullYear() , this.fds , this);
+    console.log(`${amt} fix deposited`);
+    this.dateFD = new Date(date)
+    this.FD = new fixedDeposit(amt , this.dateFD.getDate() , this.dateFD.getMonth() , this.dateFD.getFullYear() , this.fds , this);
     this.fds += 1;
-    this.fixedDeps.push(FD);
+    this.fixedDeps.push(this.FD);
   }
-  
+
+  retrAmt(id) {
+    this.depAmt(this.fixedDeps[id].retrAmt());
+  }
+
   currbal() {
     console.log(`Current balance: $${this.amt}`);
   }
-  
+
   depAmt(amt) {
     this.amt += amt;
     console.log("---------Deposition-----------");
@@ -30,7 +35,7 @@ class bankAccount {
     console.log("---------//Deposition-----------");
     console.log("------------------------------");
     }
-  
+
   withAmt(amt) {
     this.amt -= amt;
     console.log("---------Withdrawal-----------");
@@ -49,16 +54,18 @@ class fixedDeposit {
       this.month = month;
       this.year = year;
       this.Person = person
+      this.currDate = null;
   }
-  
-//  setInterval((function() {this.amt += 0.002* this.amt;}) , 60000);
-  
+
+
+  //setInterval(function() {this.amt += 0.002* this.amt;} , 60000);
+
   retrAmt() {
-    let currDate = new Date();
-    if ((currDate.getDate() === this.date.getDate()) && (currDate.getMonth() === this.date.getMonth()) && currDate.getFullYear() === this.date.getFullYear()) {
-      this.person.amt = this.amt;
+    this.currDate = new Date();
+    if ((this.currDate.getDate() === this.day) && (this.currDate.getMonth() === this.month) && this.currDate.getFullYear() === this.year) {
+      return this.amt
     } else {
-      return 0.8*amt;
+      return 0.8*this.amt;
     }
   }
 }
@@ -66,4 +73,9 @@ class fixedDeposit {
 let yash = new bankAccount("Yash" , 12000 , "8971220965" , 19);
 yash.currbal();
 yash.depAmt(1240);
-//yash.createFD(1240 , '25 Mar 2018');
+yash.createFD(1240 , '25 Mar 2018');
+yash.currbal();
+console.log(yash.fixedDeps);
+yash.currbal();
+yash.retrAmt(0);
+yash.currbal();//
