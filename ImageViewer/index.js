@@ -6,6 +6,14 @@ var i = 0;
 left.addEventListener('click' , movePre);
 right.addEventListener('click' , moveFwd);
 
+function displayKey() {
+  left.style.color = "white";
+  right.style.color = "white";
+}
+function displayKeyOut() {
+  left.style.color = "black";
+  right.style.color = "black";
+}
 
 function moveFwd() {
   i++;
