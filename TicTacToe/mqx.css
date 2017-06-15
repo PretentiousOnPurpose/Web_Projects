@@ -35,6 +35,10 @@ main , section ,  body , html , header , p , img {
     align-items: center;
 }
 
+button:focus {
+  outline:0;
+}
+
 body {
     position: relative;
     width: 100vw;
