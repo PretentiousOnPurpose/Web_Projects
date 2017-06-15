@@ -18,6 +18,10 @@ main , section ,  body , html , header , p , img {
     /*font-weight: 700;*/
     color:  #49708f;
 }
+
+button:focus {
+  outline:0;
+}
 #sym1 , #sym2{
     text-align: center;
     font-size: 1rem;
